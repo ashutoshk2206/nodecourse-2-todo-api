@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const mongoose = require('./db/mongoose');
-var {User} = require('./model/user');
-var {Todo} = require('./model/todo');
+var {User} = require('./models/user');
+var {Todo} = require('./models/todo');
 
 var app = express();
 app.use(bodyParser.json());
@@ -23,3 +23,5 @@ app.post('/todos', (req, res) => {
         res.status(400).send(err);
     });
 });
+
+module.exports = {app}
